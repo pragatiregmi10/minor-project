@@ -1,22 +1,22 @@
-const aside = document.getElementsByClassName("aside")[0];
-const main = document.getElementsByClassName("main")[0];
-const navbarHeight = document.getElementsByClassName("navbar")[0].clientHeight;
-const windowHeight = window.innerHeight;
-const profileOptions = document.getElementsByClassName("profileOptions")[0];
-
-function adjustHeight(){
-    aside.style.height = (windowHeight - navbarHeight) + 'px';
-    main.style.height = (windowHeight - navbarHeight) + 'px';
-    main.style.maxHeight = (windowHeight - navbarHeight) + 'px';
-
+// script.js
+function loadPage(page) {
+    console.log(`Loading ${page} page...`);
 }
-adjustHeight();
-
-function showProfileOptions(){
-    if (profileOptions.style.display === '' || profileOptions.style.display === 'none'){
-        profileOptions.style.display = 'block';
-    }
-    else{
-        profileOptions.style.display = 'none';
-    }
+function togglePersonalInfo() {
+    var personalInfoBar = document.getElementById("personalInfoBar");
+    personalInfoBar.classList.toggle("show-info-bar");
 }
+function redirectToPage() {
+    // Get the selected values
+    var selectedFaculty = document.getElementById("faculty").value;
+    var selectedSemester = document.getElementById("semester").value;
+    var selectedBatch = document.getElementById("batchNumber").value;
+
+    // Construct the URL with selected values
+    var url = "target_page.html?faculty=" + selectedFaculty + "&semester=" + selectedSemester + "&batch=" + selectedBatch;
+
+    // Redirect to the target page
+    window.location.href = url;
+}
+
+
